@@ -21,7 +21,6 @@
       <ion-col size="4">
         <ion-searchbar></ion-searchbar>
       </ion-col>
-          
               <ion-col size="1">
                 <ion-checkbox>Nome</ion-checkbox>
               </ion-col>
@@ -34,7 +33,42 @@
               <ion-col size="1">
                 <ion-checkbox>Telefone</ion-checkbox>
               </ion-col>
-
   </ion-row>
-  
-  </ion-content>
+
+  <ion-button (click)="listarfuncionarios()">
+    listar Funcionarios
+  </ion-button>
+  <ion-list *ngIF="funcionarios">
+    <ion-item *ngFor="let funcionario of funcionarios">
+      <ion-label>
+        {{funcionario.Nome}} {{funcionario.Sobrenome}}
+      </ion-label>
+      <ion-label>
+        {{funcionario.Fone}}
+      </ion-label>
+      <ion-label>
+        {{funcionario.Cidade}}
+      </ion-label>
+      <ion-label>
+        {{funcionario.CEP}}
+      </ion-label>
+      <ion-label>
+        {{funcionario.Cargo}}
+      </ion-label>
+      <ion-label>
+        {{funcionario.Salario}}
+      </ion-label>
+      <ion-label>
+        {{funcionario.DataNasc}}
+      </ion-label>
+      <ion-label>
+        {{funcionario.Endereco}}
+      </ion-label>
+
+      <ion-button (click)="inserirfuncionario()">
+        Criar Funcionario
+      </ion-button>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
